@@ -10,7 +10,9 @@
 
 int main(void)
 {
-	for (int num = 0; num < 10; num++)
+	int num = 0;
+
+	for (num; num < 10; num++)
 	{
 		printf("%i", num);
 	}
