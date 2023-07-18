@@ -25,14 +25,20 @@ void times_table(void)
 			/* Print first product with any special characters */
 			if (product == 0 && multi < 1)
 			{
-				_putchar(product);
+				_putchar('0');
 			}
-			else
+			else if (product >= 0 && product <= 9)
 			{
-				_putchar(' ');
-				_putchar(',');
-				_putchar(product);
+				_putchar(product + '0');
 			}
+			else (product >= 10 && product <= 99)
+			{
+				_putchar((product / 10) + '0');
+				_putchar((product % 10) + '0');
+			}
+			
+			_putchar(',');
+			_putchar(' ');
 		}
 		printf("\n");
 	}
