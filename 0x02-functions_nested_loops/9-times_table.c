@@ -27,6 +27,7 @@ void times_table(void)
 			{
 				_putchar('0');
 			}
+			/* Convert product to ASCII characters */
 			else if (product >= 0 && product <= 9)
 			{
 				_putchar(' ');
@@ -38,8 +39,12 @@ void times_table(void)
 				_putchar((product % 10) + '0');
 			}
 
-			_putchar(',');
-			_putchar(' ');
+			/* Check to print comma or not */
+			if (multi < times)
+			{
+				_putchar(',');
+				_putchar(' ');
+			}
 		}
 		_putchar('\n');
 	}
