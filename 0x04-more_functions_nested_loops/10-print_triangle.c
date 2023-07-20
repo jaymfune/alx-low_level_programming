@@ -3,34 +3,24 @@
 /**
  * print_triangle - Prints a triangle
  * @size: sets the size of the triangle
-*/
+ *
+ * Return: nothing
+ */
 
 void print_triangle(int size)
 {
-	int i, j, k;
+	int i, j;
 
-	/* Size to determines loop count */
-	for (i = 0; i <= size; i++)
-	{
-		/* Print space if the i if greater than 0 */
-		if (i > 0)
+	if (size > 0)
+		for (i = size; i > 0; i--)
 		{
-			for (k = 0; k < size - i; k++)
-			{
-				putchar(' ');
-			}
-		}
-
-		/* Print # */
-		for (j = 0; j < i; j++)
-		{
-			putchar('#');
-		}
-
-		/* Start new line if i if greater than 0 */
-		if (i > 0)
-		{
+			for (j = 1; j <= size; j++)
+				if (j >= i)
+					putchar('#');
+				else
+					putchar(' ');
 			putchar('\n');
 		}
-	}
+	else
+		putchar('\n');
 }
