@@ -17,20 +17,20 @@ void print_triangle(int size)
 		{
 			for (k = 0; k < size - i; k++)
 			{
-				printf(" ");
+				putchar(' ');
 			}
 		}
 
 		/* Print # */
 		for (j = 0; j < i; j++)
 		{
-			printf("#");
+			putchar('#');
 		}
 
 		/* Start new line if i if greater than 0 */
 		if (i > 0)
 		{
-			printf("\n");
+			putchar('\n');
 		}
 	}
 }
