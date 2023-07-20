@@ -13,41 +13,24 @@ void fizz_buzz(void);
 
 int main(void)
 {
-	fizz_buzz();
+	int num;
+
+	for (num = 1; num <= 100; ++num)
+	{
+		if (num % 3 == 0 && !(num % 5 == 0))
+			printf("Fizz");
+		else if (num % 5 == 0 && !(num % 3 == 0))
+			printf("Buzz");
+		else if (num % 3 == 0 && num % 5 == 0)
+			printf("FizzBuzz");
+		else
+			printf("%d", num);
+
+		if (num != 100)
+			printf(" ");
+		else
+			printf("\n");
+	}
 
 	return (0);
-}
-
-void fizz_buzz(void)
-{
-	int i;
-	int end = 100;
-
-	for (i = 1; i <= end; i++)
-	{
-		if (i % 3 == 0 && i % 5 == 0)
-		{
-			printf("FizzBuzz");
-		}
-		else if (i % 3 == 0)
-		{
-			printf("Fizz");
-		}
-		else if (i % 5 == 0)
-		{
-			printf("Buzz");
-		}
-		else
-		{
-			printf("%d\n ", i);
-		}
-
-		if (i != 100)
-		{
-			printf(" ");
-		}
-		else{
-			printf("\n");
-		}
-	}
 }
