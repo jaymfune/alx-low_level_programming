@@ -18,6 +18,8 @@ void print_rev(char *s)
 	// Print the characters in reverse order
 	for (int i = length - 1; i >= 0; i--)
 	{
-		printf("%c", s[i]);
+		_putchar(s[i]);
 	}
+
+	_putchar('\n');
 }
