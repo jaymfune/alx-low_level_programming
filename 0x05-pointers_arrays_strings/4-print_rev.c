@@ -15,7 +15,7 @@ void print_rev(char *s)
 		length++;
 	}
 
-	// Print the characters in reverse order
+	/* Print the characters in reverse order */
 	for (int i = length - 1; i >= 0; i--)
 	{
 		_putchar(s[i]);
