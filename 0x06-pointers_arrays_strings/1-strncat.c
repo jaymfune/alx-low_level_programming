@@ -21,6 +21,7 @@ char *_strcat(char *dest, char *src, int n)
 
 	/* Concat the src string to the dest string, up to n characters */
 	int = 0;
+
 	while (*src != '\0' && i < n)
 	{
 		*dest_end = *src;
