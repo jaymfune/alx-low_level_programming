@@ -30,8 +30,6 @@ char *_strcat(char *dest, char *src, int n)
 		i++;
 	}
 
-	/* Add a terminating null byte to the end of the concatenated string */
-	*dest_end = '\0';
 
 	return (dest);
 }
