@@ -11,23 +11,21 @@
 
 char *_strcat(char *dest, char *src, int n)
 {
-	/* Find the end of the dest string */
-	char *dest_end = dest;
+	int i = 0; 
+	int j = 0;
 
-	while (*dest_end != '\0')
+	/* Find the end of the dest string */
+	while (*dest[i] != '\0')
 	{
-		dest_end++;
+		i++;
 	}
 
 	/* Concat the src string to the dest string, up to n characters */
-	int i = 0;
-
-	while (*src != '\0' && i < n)
+	while (*src[j] != '\0' && j < n)
 	{
-		*dest_end = *src;
-		dest_end++;
-		src++;
+		dest[i] = *src[j];
 		i++;
+		j++;
 	}
 
 
