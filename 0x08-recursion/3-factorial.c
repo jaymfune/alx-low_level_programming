@@ -14,5 +14,5 @@ int factorial(int n)
 	if (n < 0) /* Base case : factorial of a negative value */
 		return (-1);
 
-	return (number * factorial(number - 1));
+	return (n * factorial(n - 1));
 }
