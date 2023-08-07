@@ -36,9 +36,8 @@ int **alloc_grid(int width, int height)
 			for (j = 0; j < i; j++)
 				free(arr[j]);
 
-			/* Free memory for the array of integer pointers and return NULL */
+			/* Free memory*/
 			free(arr);
-			return (NULL);
 		}
 	}
 
