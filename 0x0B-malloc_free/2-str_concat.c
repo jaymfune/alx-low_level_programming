@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include <string.h>
 #include "main.h"
 
 /**
@@ -12,14 +11,17 @@
 
 char *str_concat(char *s1, char *s2)
 {
+	unsigned int len1, len2, i;
+
+
 	/* Handle cases where both input strings are empty. */
 	if (s1 == NULL && s2 == NULL)
 		return NULL;
 
 
 	/* Calculate lengths of input strings. */
-	unsigned int len1 = (s1 ? strlen(s1) : 0);
-	unsigned int len2 = (s2 ? strlen(s2) : 0);
+	len1 = (s1 ? strlen(s1) : 0);
+	len2 = (s2 ? strlen(s2) : 0);
 
 	/* Allocate memory for concatenated string. */
 	char *s3 = (char *)malloc(len1 + len2 + 1);
@@ -27,13 +29,13 @@ char *str_concat(char *s1, char *s2)
 		return (NULL);
 
 	/* Copy characters from s1 to s3. */
-	for (unsigned int i = 0; i < len1; i++)
+	for (i = 0; i < len1; i++)
 	{
 		s3[i] = s1[i];
 	}
 
 	/* Copy characters from s2 to s3. */
-	for (unsigned int i = 0; i < len2; i++)
+	for (i = 0; i < len2; i++)
 	{
 		s3[len1 + i] = s2[i];
 	}
