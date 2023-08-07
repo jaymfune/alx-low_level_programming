@@ -15,7 +15,7 @@ char *create_array(unsigned int size, char c)
 	unsigned int i = 0; /* Initialize a counter variable */
 
 	/* If size is 0, return NULL pointer */
-	if(size == 0)
+	if (size == 0)
 		return (null);
 
 	/* Allocate memory for an array of chars */
