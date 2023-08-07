@@ -15,12 +15,6 @@ char *str_concat(char *s1, char *s2)
 	unsigned int len1, len2, i;
 	char *s3;
 
-
-	/* Handle cases where both input strings are empty. */
-	if (s1 == NULL && s2 == NULL)
-		return (NULL);
-
-
 	/* Calculate lengths of input strings. */
 	len1 = (s1 ? strlen(s1) : 0);
 	len2 = (s2 ? strlen(s2) : 0);
