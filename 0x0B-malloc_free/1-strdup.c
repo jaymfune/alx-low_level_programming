@@ -10,8 +10,6 @@
 
 char *_strdup(char *str)
 {
-	char *dup;
-
 	/* Check if the input string is NULL. */
 	if (str == NULL)
 		return (NULL);
