@@ -12,6 +12,7 @@
 int **alloc_grid(int width, int height)
 {
 	int **arr;
+	int i, j;
 
 	/* Check if width or height is negative or 0 */
 	if (height <= 0 || width <= 0)
@@ -23,7 +24,7 @@ int **alloc_grid(int width, int height)
 		return (NULL);
 
 	/* Loop through each row and allocate memory for 'width' integers */
-	for (int i = 0; i < height; i++)
+	for (i = 0; i < height; i++)
 	{
 		/* Allocate memory for 'width' integers and initialize to 0 */
 		arr[i] = (int *)calloc(width, sizeof(int));
@@ -32,7 +33,7 @@ int **alloc_grid(int width, int height)
 		if (arr[i] == NULL)
 		{
 			/* Free memory for previously allocated rows */
-			for (int j = 0; j < i; j++)
+			for (j = 0; j < i; j++)
 				free(arr[j]);
 
 			/* Free memory for the array of integer pointers and return NULL */
