@@ -17,14 +17,14 @@ char *_strdup(char *str)
 	if (str == NULL)
 		return (NULL);
 
-	/* Allocate memory for the duplicate string, including space for the null terminator. */
+	/* Allocate memory for the 'dup', include space for the null terminator. */
 	dup = (char *)malloc(strlen(str) + 1);
 
 	/* Check if memory allocation was successful. */
 	if (dup == NULL)
 		return (NULL);
 
-	/* Copy the content of the input string 'str' into the allocated memory 'dup'. */
+	/* Copy the content of the input 'str' into the allocated memory 'dup' */
 	strcpy(dup, str);
 
 	/* Return the pointer to the newly created duplicate string. */
