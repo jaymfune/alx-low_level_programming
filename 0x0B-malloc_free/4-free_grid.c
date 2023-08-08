@@ -15,7 +15,7 @@ void free_grid(int **grid, int height)
 	if (grid == NULL)
 		free(grid);
 
-	/* Loop through each row (height) of the grid and free the memory allocated for each row. */
+	/* Loop through each row(height) of the grid and free the memory */
 	for (i = 0; i < height; i++)
 		free(grid[i]);
 
