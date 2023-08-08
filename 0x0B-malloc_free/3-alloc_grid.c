@@ -1,51 +1,40 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include "main.h"
-
 /**
- * **alloc_grid - creates a two dimensional array of ints
- * @width: width of the matrix
- * @height: height of the matrix
- *
- * Return: pointer to the created matrix (Success)
- * or NULL (Error)
+ * alloc_grid - returns a pointer to a 2 dimensional array of integers
+ * @width: columns
+ * @height: rows
+ * Return: pointer to 2d array of integers
  */
+
 int **alloc_grid(int width, int height)
 {
-	int **arr;
-	int i, j;
+	int **grid;
+	int h, w;
 
-	/* Check if width or height is negative or 0 */
-	if (height <= 0 || width <= 0)
+	if (width <= 0 || height <= 0) /* validate input */
 		return (NULL);
 
-	/* Allocate memory for an array of 'height' integer pointers */
-	arr = (int **)malloc(sizeof(int *) * height);
-	if (arr == NULL)
+	/* allocate memory for rows */
+	grid = (int **) malloc(height * sizeof(int *));
+
+	if (grid == NULL) /* validate memory */
 		return (NULL);
 
-	/* Loop through each row and allocate memory for 'width' integers */
-	for (i = 0; i < height; i++)
+	for (h = 0; h < height; h++) /*allocate memory for columns of each row*/
 	{
-		/* Allocate memory for 'width' integers and initialize to 0 */
-		arr[i] = (int *)calloc(width, sizeof(int));
-
-		/* Check if memory allocation fails for this row */
-		if (arr[i] == NULL)
+		grid[h] = malloc(width * sizeof(int));
+		if (grid[h] == NULL) /* validate memory */
 		{
-			/* Free memory for previously allocated rows */
-			for (j = 0; j < i; j++)
-				free(arr[j]);
-
-			/* Free the array of integer pointers */
-			free(arr);
-
+			for (h = 0; h < height; h++)
+				free(grid[h]);
+			free(grid);
 			return (NULL);
 		}
+		for (w = 0; w < width; w++) /* set array values to 0 */
+			grid[h][w] = 0;
 	}
 
-	/* Return the allocated 2D grid */
-	return (arr);
+	return (grid);
 }
-
-
-
