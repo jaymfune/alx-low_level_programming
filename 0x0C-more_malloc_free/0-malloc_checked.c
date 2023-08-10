@@ -23,7 +23,6 @@ void *malloc_checked(unsigned int b)
 	}
 
 	/* Return the allocated memory pointer */
-	free(ptr);
 	return (ptr);
 }
 
