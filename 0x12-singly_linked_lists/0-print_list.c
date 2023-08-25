@@ -23,7 +23,7 @@ size_t print_list(const list_t *h)
 		/* Move to the next node in the list. */
 		h = h->next;
 
-		node_count += 1;
+		node_count++;
 	}
 
 	return (node_count);
