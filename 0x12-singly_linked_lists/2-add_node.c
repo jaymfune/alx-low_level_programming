@@ -11,35 +11,30 @@
 
 list_t *add_node(list_t **head, const char *str)
 {
-	/* pointer to a new list node */
-	list_t *new;
+	/* Allocate memory for the new node */
+	list_t *new_node;
+	list_t *new_node = malloc(sizeof(list_t));
 
-	/* variable to store the length of the input string */
-	unsigned int len = 0;
-
-	/* Calculate the length of the input string by iterating through its characters */
-	while (str[len])
-		len++;
-
-	/* Allocate memory for the new list node */
-	new = malloc(sizeof(list_t));
-
-	/* Check if memory allocation was successful */
-	if (!new)
-		return (NULL);
+	if (new_node == NULL)
+		return (NULL); /* Memory allocation failed */
 
 	/* Duplicate the input string and store it in the new node's 'str' field */
-	new->str = strdup(str);
+	new_node->str = strdup(str);
+	if (new_node->str == NULL)
+	{
+		free(new_node); /* Clean up memory allocated for the new node */
+		return (NULL); /* Memory allocation for string duplication failed */
+	}
 
-	/* Store the length of the input string in the new node's 'len' field */
-	new->len = len;
+	/* Calculate the length of the duplicated string */
+	new_node->len = strlen(str);
 
-	/* Make the new node point to the current head of the linked list */
-	new->next = (*head);
+	/* Make the new node point to the current head of the list */
+	new_node->next = *head;
 
-	/* Update the head of the linked list to point to the new node */
-	(*head) = new;
+	/* Update the head of the list to point to the new node */
+	*head = new_node;
 
-	/* Return the address of the new element (the new node) */
-	return (*head);
+	return (new_node);
 }
+
