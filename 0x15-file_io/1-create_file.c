@@ -28,9 +28,9 @@ int create_file(const char *filename, char *text_content)
 	}
 
 	/**
-	  * Create a file with the specified filename, 
-	  * open it for both reading and writing, and 
-	  * truncate it if it already exists. Set its 
+	  * Create a file with the specified filename,
+	  * open it for both reading and writing, and
+	  * truncate it if it already exists. Set its
 	  * permissions to 0600 (read and write for the owner).
 	  */
 	fd = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
