@@ -35,7 +35,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		temp = temp->next;
 	}
 
-	/* If no collision, create a new node and add it to the beginning of the list */
+	/**
+	 * If no collision, create a new node and
+	 * add it to the beginning of the list
+	 */
 	new_node = malloc(sizeof(hash_node_t));
 	if (new_node == NULL)
 		return (0); /* malloc failed */
